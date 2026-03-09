@@ -1,0 +1,128 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org"-->
+<!--      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">-->
+<!--<head>-->
+<!--  <title>Tada..!</title>-->
+<!--  <meta charset="UTF-8">-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<h2>Welcome to Home Page</h2>-->
+
+<!--&lt;!&ndash; Show only if user is authenticated &ndash;&gt;-->
+<!--<div sec:authorize="isAuthenticated()">-->
+<!--  <p>-->
+<!--    Logged in as:-->
+<!--    <strong sec:authentication="name"></strong>-->
+<!--  </p>-->
+<!--</div>-->
+
+<!--<hr>-->
+
+<!--<p>This page is protected. Only logged-in users can see this.</p>-->
+
+<!--<hr>-->
+
+<!--&lt;!&ndash; Logout form (POST required because CSRF enabled) &ndash;&gt;-->
+<!--<form th:action="@{/logout}" method="post">-->
+<!--  <button type="submit">Logout</button>-->
+<!--</form>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+  <title>Welcome</title>
+  <meta charset="UTF-8">
+
+  <style>
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #4A90E2, #6A5ACD);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background: white;
+      width: 420px;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    .user-box {
+      background: #f4f6ff;
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .user-box strong {
+      color: #4A90E2;
+    }
+
+    .info {
+      font-size: 15px;
+      margin-bottom: 25px;
+      color: #444;
+    }
+
+    button {
+      padding: 12px 20px;
+      background: #ff4d4d;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: #e63939;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+  <h2>Welcome 🎉</h2>
+
+  <div sec:authorize="isAuthenticated()" class="user-box">
+    Logged in as:
+    <strong sec:authentication="name"></strong>
+  </div>
+
+  <p class="info">
+    This is a protected page. Only authenticated users can access it.
+  </p>
+
+  <form th:action="@{/logout}" method="post">
+    <button type="submit">Logout</button>
+  </form>
+
+</div>
+
+</body>
+</html>

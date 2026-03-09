@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Setup MFA</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    img {
+      margin: 20px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #2d89ef;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1b5fbf;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+
+  <h2>Scan QR Code</h2>
+
+  <p>Scan this QR code with your Authenticator app.</p>
+
+  <img th:src="${qr}" alt="QR Code"/>
+
+  <p>
+    After scanning, click continue to login.
+  </p>
+
+  <a href="/login">Go to Login</a>
+
+</div>
+
+</body>
+</html>

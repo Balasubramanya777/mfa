@@ -1,0 +1,178 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <title>Login</title>-->
+<!--    <meta charset="UTF-8">-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<h2>Login</h2>-->
+
+<!--&lt;!&ndash; Error message &ndash;&gt;-->
+<!--<div th:if="${param.error}" style="color:red">-->
+<!--    Invalid username or password-->
+<!--</div>-->
+
+<!--&lt;!&ndash; Logout message &ndash;&gt;-->
+<!--<div th:if="${param.logout}" style="color:green">-->
+<!--    You have been logged out successfully-->
+<!--</div>-->
+
+<!--<form th:action="@{/login}" method="post">-->
+<!--    <div>-->
+<!--        <label>Username</label>-->
+<!--        <input type="text" name="username" required/>-->
+<!--    </div>-->
+
+<!--    <div>-->
+<!--        <label>Password</label>-->
+<!--        <input type="password" name="password" required/>-->
+<!--    </div>-->
+
+<!--    <div>-->
+<!--        <button type="submit">Login</button>-->
+<!--    </div>-->
+<!--</form>-->
+
+<!--<p>-->
+<!--    Don’t have an account?-->
+<!--    <a th:href="@{/register}">Register</a>-->
+<!--</p>-->
+
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #4A90E2, #6A5ACD);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-card {
+            background: white;
+            padding: 40px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            transition: border 0.2s;
+        }
+
+        input:focus {
+            outline: none;
+            border: 1px solid #4A90E2;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #4A90E2;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background: #3a78c2;
+        }
+
+        .message {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .register-link a {
+            color: #4A90E2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="login-card">
+
+    <h2>Login</h2>
+
+    <div th:if="${param.error}" class="message error">
+        Invalid username or password
+    </div>
+
+    <div th:if="${param.logout}" class="message success">
+        You have been logged out successfully
+    </div>
+
+    <form th:action="@{/login}" method="post">
+
+        <label>Username</label>
+        <input type="text" name="username" required/>
+
+        <label>Password</label>
+        <input type="password" name="password" required/>
+
+        <button type="submit">Login</button>
+
+    </form>
+
+    <div class="register-link">
+        Don’t have an account?
+        <a th:href="@{/register}">Register</a>
+    </div>
+
+</div>
+
+</body>
+</html>

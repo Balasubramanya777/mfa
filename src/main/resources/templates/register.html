@@ -1,0 +1,167 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <title>Register</title>-->
+<!--    <meta charset="UTF-8">-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<h2>Register</h2>-->
+
+<!--<form th:action="@{/register}" th:object="${request}" method="post">-->
+
+<!--    <div>-->
+<!--        <label>Username</label>-->
+<!--        <input type="text" th:field="*{userName}"/>-->
+<!--        <div th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}" style="color:red"></div>-->
+<!--    </div>-->
+
+<!--    <div>-->
+<!--        <label>Password</label>-->
+<!--        <input type="password" th:field="*{password}"/>-->
+<!--        <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color:red"></div>-->
+<!--    </div>-->
+
+<!--    <div>-->
+<!--        <button type="submit">Register</button>-->
+<!--    </div>-->
+
+<!--</form>-->
+
+<!--<p>-->
+<!--    Already have an account?-->
+<!--    <a th:href="@{/login}">Login</a>-->
+<!--</p>-->
+
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Register</title>
+    <meta charset="UTF-8">
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #6A5ACD, #4A90E2);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .register-card {
+            background: white;
+            padding: 40px;
+            width: 360px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            transition: border 0.2s;
+        }
+
+        input:focus {
+            outline: none;
+            border: 1px solid #4A90E2;
+        }
+
+        .error {
+            font-size: 13px;
+            color: red;
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            background: #4A90E2;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background: #3a78c2;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .login-link a {
+            color: #4A90E2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="register-card">
+
+    <h2>Create Account</h2>
+
+    <form th:action="@{/register}" th:object="${request}" method="post">
+
+        <label>Username</label>
+        <input type="text" th:field="*{userName}" />
+        <div class="error"
+             th:if="${#fields.hasErrors('userName')}"
+             th:errors="*{userName}">
+        </div>
+
+        <label>Password</label>
+        <input type="password" th:field="*{password}" />
+        <div class="error"
+             th:if="${#fields.hasErrors('password')}"
+             th:errors="*{password}">
+        </div>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+    <div class="login-link">
+        Already have an account?
+        <a th:href="@{/login}">Login</a>
+    </div>
+
+</div>
+
+</body>
+</html>

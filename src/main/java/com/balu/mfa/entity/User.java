@@ -21,4 +21,7 @@ public class User {
 
     @Column(name = "password", nullable = false)
     private String password;
+
+    @Column(name = "mfa_secret", nullable = false)
+    private String mfaSecret;
 }

@@ -1,13 +1,13 @@
 package com.balu.mfa.dto;
 
-import lombok.AllArgsConstructor;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-//@NoArgsConstructor
-//@AllArgsConstructor
 public class AuthRequest {
+    @NotBlank
     private String userName;
+
+    @NotBlank
     private String password;
 }
