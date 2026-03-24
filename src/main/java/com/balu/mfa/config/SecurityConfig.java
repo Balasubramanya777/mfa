@@ -29,7 +29,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) {
 
         http.authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/login", "/register", "/mfa", "/css/**", "/js/**").permitAll()
+                        .requestMatchers("/login", "/register", "/mfa", "/css/**", "/js/**", "/mfa_favicon.png").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form

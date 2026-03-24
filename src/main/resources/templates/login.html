@@ -1,53 +1,9 @@
-<!--<!DOCTYPE html>-->
-<!--<html xmlns:th="http://www.thymeleaf.org">-->
-<!--<head>-->
-<!--    <title>Login</title>-->
-<!--    <meta charset="UTF-8">-->
-<!--</head>-->
-<!--<body>-->
-
-<!--<h2>Login</h2>-->
-
-<!--&lt;!&ndash; Error message &ndash;&gt;-->
-<!--<div th:if="${param.error}" style="color:red">-->
-<!--    Invalid username or password-->
-<!--</div>-->
-
-<!--&lt;!&ndash; Logout message &ndash;&gt;-->
-<!--<div th:if="${param.logout}" style="color:green">-->
-<!--    You have been logged out successfully-->
-<!--</div>-->
-
-<!--<form th:action="@{/login}" method="post">-->
-<!--    <div>-->
-<!--        <label>Username</label>-->
-<!--        <input type="text" name="username" required/>-->
-<!--    </div>-->
-
-<!--    <div>-->
-<!--        <label>Password</label>-->
-<!--        <input type="password" name="password" required/>-->
-<!--    </div>-->
-
-<!--    <div>-->
-<!--        <button type="submit">Login</button>-->
-<!--    </div>-->
-<!--</form>-->
-
-<!--<p>-->
-<!--    Don’t have an account?-->
-<!--    <a th:href="@{/register}">Register</a>-->
-<!--</p>-->
-
-<!--</body>-->
-<!--</html>-->
-
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Login</title>
     <meta charset="UTF-8">
-
+    <link rel="icon" type="image/png" th:href="@{/mfa_favicon.png}">
     <style>
         body {
             margin: 0;

@@ -1,37 +1,3 @@
-<!--<!DOCTYPE html>-->
-<!--<html xmlns:th="http://www.thymeleaf.org"-->
-<!--      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">-->
-<!--<head>-->
-<!--  <title>Tada..!</title>-->
-<!--  <meta charset="UTF-8">-->
-<!--</head>-->
-<!--<body>-->
-
-<!--<h2>Welcome to Home Page</h2>-->
-
-<!--&lt;!&ndash; Show only if user is authenticated &ndash;&gt;-->
-<!--<div sec:authorize="isAuthenticated()">-->
-<!--  <p>-->
-<!--    Logged in as:-->
-<!--    <strong sec:authentication="name"></strong>-->
-<!--  </p>-->
-<!--</div>-->
-
-<!--<hr>-->
-
-<!--<p>This page is protected. Only logged-in users can see this.</p>-->
-
-<!--<hr>-->
-
-<!--&lt;!&ndash; Logout form (POST required because CSRF enabled) &ndash;&gt;-->
-<!--<form th:action="@{/logout}" method="post">-->
-<!--  <button type="submit">Logout</button>-->
-<!--</form>-->
-
-<!--</body>-->
-<!--</html>-->
-
-
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
@@ -39,7 +5,7 @@
 <head>
   <title>Welcome</title>
   <meta charset="UTF-8">
-
+  <link rel="icon" type="image/png" th:href="@{/mfa_favicon.png}">
   <style>
 
     body {
